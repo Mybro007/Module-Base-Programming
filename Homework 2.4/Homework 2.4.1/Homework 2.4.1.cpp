@@ -4,12 +4,29 @@
 class Figure
 {
 	protected:
-		std::string figure;
-		int n;
+		std::string name;
+		int sides_count;
 	public:
-		void get_figure(std::string figure = "Фигура", int n = 0)
+		Figure()
 		{
-			std::cout << figure << ": " << n << "\n";
+			name = "Figure";
+			sides_count = 0;
+		}
+
+		void get_sides_count(int sides_count)
+		{
+			std::cout << sides_count << "\n";
+		}
+
+		void get_figure_name(std::string name)
+		{
+			std::cout << name << ": ";
+		}
+
+		void get_info()
+		{
+			get_figure_name(name);
+			get_sides_count(sides_count);
 		}
 };
 
@@ -18,9 +35,8 @@ class Triangle : public Figure
 	public:
 		Triangle()
 		{
-			figure = "Triangle";
-			n = 3;
-			get_figure(figure, n);
+			name = "Triangle";
+			sides_count = 3;
 		}
 };
 
@@ -29,16 +45,14 @@ class Square : public Figure
 	public:
 		Square()
 		{
-			figure = "Square";
-			n = 4;
-			get_figure(figure, n);
+			name = "Square";
+			sides_count = 4;
 		}
 };
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
-	std::cout << "Number of size: \n\n";
+	std::cout << "Number of side: \n\n";
 	for (int i = 0; i < 3; ++i)
 	{
 		std::cout << "Input the name of figure: ";
@@ -47,17 +61,19 @@ int main()
 		if (*figure == "triangle")
 		{
 			Triangle* fig = new Triangle;
+			fig->get_info();
 			delete fig;
 		}
 		else if (*figure == "square")
 		{
 			Square* fig = new Square;
+			fig->get_info();
 			delete fig;
 		}
 		else
 		{
 			Figure* fig = new Figure;
-			fig->get_figure();
+			fig->get_info();
 			delete fig;
 		}
 	}

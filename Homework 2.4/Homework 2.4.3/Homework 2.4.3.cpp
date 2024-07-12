@@ -3,38 +3,63 @@
 
 class Figure
 {
-	protected:
-		int n;
-		std::string name;
-		std::string right_figure;
+public:
+	Figure()
+	{
+		name = "Figure";
+	}
 
-	public:
+protected:
+	std::string name;
+	std::string rightfigure;
+	int side_count;
+	void get_name()
+	{
+		std::cout << name << ": \n";
+	}
 
-		virtual void set_figure()
-		{
-			n = 0;
-			name = "Figure";
-		}
+	void get_side_count()
+	{
+		std::cout << "Amount of sides: " << side_count << "\n";
+	}
 
-		virtual void figure_right()
-		{
-			right_figure = "Right figure";
-		}
+	void get_rightfigure()
+	{
+		figure_right();
+		std::cout << rightfigure << "\n";
+	}
 
-		virtual void get_figure()
-		{
-			std::cout << name << ":\n";
-			std::cout << right_figure << "\n";
-			std::cout << n << "\n";
-		}
+	virtual void get_sides()
+	{
+		side_count = 0;
+	}
+
+	virtual void get_angles()
+	{
+		std::cout << "\n";
+	}
+
+	virtual void figure_right()
+	{
+		rightfigure = "Right figure";
+	}
+
+	
+public:
+	void get_info()
+	{
+		get_name();
+		get_rightfigure();
+		get_side_count();
+		get_sides();
+		get_angles();
+		std::cout << "\n";
+	}
 };
 
-class Triangle
+class Triangle : public Figure
 {
 protected:
-	int n;
-	std::string name;
-	std::string right_figure;
 	int a = 0;
 	int b = 0;
 	int c = 0;
@@ -42,33 +67,33 @@ protected:
 	int B = 0;
 	int C = 0;
 
+private:
+	void get_sides() override
+	{
+		std::cout << "Sides: a = " << a << ", b = " << b << ", c = " << c << "\n";
+	}
+
+	void get_angles() override
+	{
+		std::cout << "Angles: A = " << A << ", B = " << B << ", C = " << C << "\n";
+	}
+
+	void figure_right() override
+	{
+		((side_count == 3 && (A + B + C) == 180) ? rightfigure = "Right figure" : rightfigure = "Wrong figure");
+	}
+
 public:
 	Triangle()
 	{
 		name = "Triangle";
-	}
-
-	virtual void get_figure()
-	{
-		std::cout << name << ":\n";
-		std::cout << right_figure << "\n";
-		std::cout << n << "\n";
-		std::cout << "Sides: a = " << a << ", b = " << b << ", c = " << c << "\n";
-		std::cout << "Angles: A = " << A << ", B = " << B << ", C = " << C << "\n";
-	}
-
-	virtual void set_figure()
-	{
-		n = 3;
-		std::cout << "Input sides of triangle (a,b,c): ";
-		std::cin >> a >> b >> c;
-		std::cout << "Input angles of triangle (A,B,C): ";
-		std::cin >> A >> B >> C;
-	}
-
-	virtual void figure_right()
-	{
-		((n==3 && (A + B + C) == 180) ? right_figure = "Right figure" : right_figure = "Wrong figure");
+		side_count = 3;
+		a = rand() % 30;
+		b = rand() % 30;
+		c = rand() % 30;
+		A = rand() % 90;
+		B = rand() % 90;
+		C = rand() % 90;
 	}
 };
 
@@ -78,16 +103,12 @@ public:
 	RightTriangle()
 	{
 		name = "Right triangle";
+		a = rand() % 30;
+		b = rand() % 30;
+		c = rand() % 30;
+		A = rand() % 90;
+		B = rand() % 90;
 		C = 90;
-	}
-
-	void set_figure() override
-	{
-		n = 3;
-		std::cout << "Input sides of right triangle (a,b,c): ";
-		std::cin >> a >> b >> c;
-		std::cout << "Input angles of right triangle (A,B): ";
-		std::cin >> A >> B;
 	}
 };
 
@@ -97,17 +118,12 @@ public:
 	IsoscelesTriangle()
 	{
 		name = "Isosceles triangle";
-	}
-
-	void set_figure() override
-	{
-		n = 3;
-		std::cout << "Input sides of isosceles triangle (a,b): ";
-		std::cin >> a >> b;
-		std::cout << "Input angles of isosceles triangle (A,B): ";
-		std::cin >> A >> B;
-		c = a;
-		C = A;
+		a = rand() % 30;
+		b = rand() % 30;
+		A = rand() % 90;
+		B = rand() % 90;
+		a = c;
+		A = C;
 	}
 };
 
@@ -117,24 +133,15 @@ public:
 	EquilateralTriangle()
 	{
 		name = "Equilateral triangle";
-		A = B = C = 60;
-	}
-
-	void set_figure() override
-	{
-		n = 3;
-		std::cout << "Input the side of equilateral triangle (a): ";
-		std::cin >> a;
+		a = rand() % 30;
 		b = c = a;
+		A = B = C = 60;
 	}
 };
 
-class Quadrilateral
+class Quadrilateral : public Figure
 {
 protected:
-	int n;
-	std::string name;
-	std::string right_figure;
 	int a = 0;
 	int b = 0;
 	int c = 0;
@@ -144,33 +151,35 @@ protected:
 	int C = 0;
 	int D = 0;
 
+private:
+	void get_sides() override
+	{
+		std::cout << "Sides: a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << "\n";
+	}
+
+	void get_angles() override
+	{
+		std::cout << "Angles: A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << "\n";
+	}
+
+	void figure_right() override
+	{
+		((side_count == 4 && (A + B + C + D) == 360) ? rightfigure = "Right figure" : rightfigure = "Wrong figure");
+	}
+
 public:
 	Quadrilateral()
 	{
 		name = "Quadrilateral";
-	}
-
-	virtual void get_figure()
-	{
-		std::cout << name << ":\n";
-		std::cout << right_figure << "\n";
-		std::cout << n << "\n";
-		std::cout << "Sides: a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << "\n";
-		std::cout << "Angles: A = " << A << ", B = " << B << ", C = " << C << ", D = " << D << "\n";
-	}
-
-	virtual void set_figure()
-	{
-		n = 4;
-		std::cout << "Input sides of quadrilateral (a,b,c,d): ";
-		std::cin >> a >> b >> c >> d;
-		std::cout << "Input angles of quadrilateral (A,B,C,D): ";
-		std::cin >> A >> B >> C >> D;
-	}
-
-	virtual void figure_right()
-	{
-		((n==4 && (A + B + C + D) == 360) ? right_figure = "Right figure" : right_figure = "Wrong figure");
+		side_count = 4;
+		a = rand() % 30;
+		b = rand() % 30;
+		c = rand() % 30;
+		d = rand() % 30;
+		A = rand() % 90;
+		B = rand() % 90;
+		C = rand() % 90;
+		D = rand() % 90;
 	}
 };
 
@@ -180,16 +189,11 @@ public:
 	Rectangular()
 	{
 		name = "Rectangular";
-		A = B = C = D = 90;
-	}
-
-	void set_figure() override
-	{
-		n = 4;
-		std::cout << "Input sides of rectangular (a,b): ";
-		std::cin >> a >> b;
+		a = rand() % 30;
+		b = rand() % 30;
 		c = a;
 		d = b;
+		A = B = C = D = 90;
 	}
 };
 
@@ -199,15 +203,9 @@ public:
 	Square()
 	{
 		name = "Square";
+		a = rand() % 30;
+		a = b = c = d;
 		A = B = C = D = 90;
-	}
-
-	void set_figure() override
-	{
-		n = 4;
-		std::cout << "Input the side of square (a): ";
-		std::cin >> a;
-		b = c = d = a;
 	}
 };
 
@@ -217,17 +215,12 @@ public:
 	Parallelogram()
 	{
 		name = "Parallelogram";
-	}
-
-	void set_figure() override
-	{
-		n = 4;
-		std::cout << "Input sides of parallelogram (a,b): ";
-		std::cin >> a >> b;
+		a = rand() % 30;
+		b = rand() % 30;
 		c = a;
 		d = b;
-		std::cout << "Input angles of parallelogram (A,B): ";
-		std::cin >> A >> B;
+		A = rand() % 90;
+		B = rand() % 90;
 		C = A;
 		D = B;
 	}
@@ -239,16 +232,10 @@ public:
 	Rhombus()
 	{
 		name = "Rhombus";
-	}
-
-	void set_figure() override
-	{
-		n = 4;
-		std::cout << "Input the side of rhombus (a): ";
-		std::cin >> a;
-		b = c = d = a;
-		std::cout << "Input angles of rhombus (A,B): ";
-		std::cin >> A >> B;
+		a = rand() % 30;
+		A = rand() % 90;
+		B = rand() % 90;
+		a = b = c = d;
 		C = A;
 		D = B;
 	}
@@ -275,106 +262,88 @@ int main()
 		{
 		case 1:
 		{
-			Triangle* figure1 = new Triangle;
-			figure1->set_figure();
-			figure1->figure_right();
-			figure1->get_figure();
-			delete figure1;
+			Triangle* figure = new Triangle;
+			Figure* pfigure = &(*figure);
+			figure->get_info();
+			delete figure;
 		}
 			break;
 		case 2:
 		{
-			RightTriangle* figure2 = new RightTriangle;
-			Triangle* pfigure2 = &(*figure2);
-			pfigure2->set_figure();
-			pfigure2->figure_right();
-			pfigure2->get_figure();
-			delete figure2;
+			RightTriangle* figure = new RightTriangle;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 3:
 		{
-			IsoscelesTriangle* figure3 = new IsoscelesTriangle;
-			Triangle* pfigure3 = &(*figure3);
-			pfigure3->set_figure();
-			pfigure3->figure_right();
-			pfigure3->get_figure();
-			delete figure3;
+			IsoscelesTriangle* figure = new IsoscelesTriangle;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 4:
 		{
-			EquilateralTriangle* figure4 = new EquilateralTriangle;
-			Triangle* pfigure4 = &(*figure4);
-			pfigure4->set_figure();
-			pfigure4->figure_right();
-			pfigure4->get_figure();
-			delete figure4;
+			EquilateralTriangle* figure = new EquilateralTriangle;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 5:
 		{
-			Quadrilateral* figure5 = new Quadrilateral;
-			figure5->set_figure();
-			figure5->figure_right();
-			figure5->get_figure();
-			delete figure5;
+			Quadrilateral* figure = new Quadrilateral;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 6:
 		{
-			Rectangular* figure6 = new Rectangular;
-			Quadrilateral* pfigure6 = &(*figure6);
-			pfigure6->set_figure();
-			pfigure6->figure_right();
-			pfigure6->get_figure();
-			delete figure6;
+			Rectangular* figure = new Rectangular;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 7:
 		{
-			Square* figure7 = new Square;
-			Quadrilateral* pfigure7 = &(*figure7);
-			pfigure7->set_figure();
-			pfigure7->figure_right();
-			pfigure7->get_figure();
-			delete figure7;
+			Square* figure = new Square;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 8:
 		{
-			Parallelogram* figure8 = new Parallelogram;
-			Quadrilateral* pfigure8 = &(*figure8);
-			pfigure8->set_figure();
-			pfigure8->figure_right();
-			pfigure8->get_figure();
-			delete figure8;
+			Parallelogram* figure = new Parallelogram;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		case 9:
 		{
-			Rhombus* figure9 = new Rhombus;
-			Quadrilateral* pfigure9 = &(*figure9);
-			pfigure9->set_figure();
-			pfigure9->figure_right();
-			pfigure9->get_figure();
-			delete figure9;
+			Rhombus* figure = new Rhombus;
+			Figure* pfigure = &(*figure);
+			pfigure->get_info();
+			delete figure;
 		}
 			break;
 		default:
 		{
 			Figure* figure = new Figure;
-			figure->set_figure();
-			figure->figure_right();
-			figure->get_figure();
+			figure->get_info();
 			delete figure;
 		}
 			break;
 		}
 
-		std::cout << "If you want to exit enter 1: ";
+		std::cout << "If you want to exit enter 0: ";
 		std::cin >> numb;
-		(numb == 1 ? exit = false : exit);
+		(numb == 0 ? exit = false : exit);
 	}
 	return 0;
 }
