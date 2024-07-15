@@ -196,13 +196,7 @@ public:
 	}
 };
 
-void print_info(Triangle& fig)
-{
-	fig.get_figure();
-	std::cout << "\n";
-}
-
-void print_info(Quadrilateral& fig)
+void print_info(Figure& fig)
 {
 	fig.get_figure();
 	std::cout << "\n";
