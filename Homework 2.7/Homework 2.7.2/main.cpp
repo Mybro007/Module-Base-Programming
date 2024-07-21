@@ -429,218 +429,226 @@ int main()
 {
 	int choice1;
 	int choice2;
+	bool exit = true;
 	int numb = 0;
-	std::cout << "Input the figure you want to describe: \n" << "1. Triangle\n" <<
-		"2. Right triangle\n" <<
-		"3. Isosceles triangle\n" <<
-		"4. Equilateral triangle\n" <<
-		"5. Quadrilateral\n" <<
-		"6. Rectangular\n" <<
-		"7. Square\n" <<
-		"8. Parallelogram\n" <<
-		"9. Rhombus\n";
-	std::cin >> choice1;
-	std::cout << "If you want to input parameters of the figure enter '1', else enter '0'(in this case parameters will be chosen by random): ";
-	std::cin >> choice2;
-	switch (choice1)
+	while (exit)
 	{
-	case 1:
-	{
-		if (choice2 == 1)
+		std::cout << "Input the figure you want to describe: \n" << "1. Triangle\n" <<
+			"2. Right triangle\n" <<
+			"3. Isosceles triangle\n" <<
+			"4. Equilateral triangle\n" <<
+			"5. Quadrilateral\n" <<
+			"6. Rectangular\n" <<
+			"7. Square\n" <<
+			"8. Parallelogram\n" <<
+			"9. Rhombus\n";
+		std::cin >> choice1;
+		std::cout << "If you want to input parameters of the figure enter '1', else enter '0'(in this case parameters will be chosen by random): ";
+		std::cin >> choice2;
+		switch (choice1)
 		{
-			int a, b, c, A, B, C;
-			std::cout << "Input parameters of the triangle(a,b,c,A,B,C): ";
-			std::cin >> a >> b >> c >> A >> B >> C;
-			Triangle* figure = new Triangle(a, b, c, A, B, C);
-			Figure* pfigure = &(*figure);
+		case 1:
+		{
+			if (choice2 == 1)
+			{
+				int a, b, c, A, B, C;
+				std::cout << "Input parameters of the triangle(a,b,c,A,B,C): ";
+				std::cin >> a >> b >> c >> A >> B >> C;
+				Triangle* figure = new Triangle(a, b, c, A, B, C);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Triangle* figure = new Triangle;
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+
+		}
+		break;
+		case 2:
+		{
+			if (choice2 == 1)
+			{
+				int a, b, c, A, B;
+				std::cout << "Input parameters of the right triangle(a,b,c,A,B): ";
+				std::cin >> a >> b >> c >> A >> B;
+				RightTriangle* figure = new RightTriangle(a, b, c, A, B);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				RightTriangle* figure = new RightTriangle;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 3:
+		{
+			if (choice2 == 1)
+			{
+				int a, b, A, B;
+				std::cout << "Input parameters of the isosceles triangle(a,b,A,B): ";
+				std::cin >> a >> b >> A >> B;
+				IsoscelesTriangle* figure = new IsoscelesTriangle(a, b, A, B);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				IsoscelesTriangle* figure = new IsoscelesTriangle;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 4:
+		{
+			if (choice2 == 1)
+			{
+				int a;
+				std::cout << "Input parameters of the equilateral triangle(a): ";
+				std::cin >> a;
+				EquilateralTriangle* figure = new EquilateralTriangle(a);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				EquilateralTriangle* figure = new EquilateralTriangle;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 5:
+		{
+			if (choice2 == 1)
+			{
+				int a, b, c, d, A, B, C, D;
+				std::cout << "Input parameters of the quadrilateral(a,b,c,d,A,B,C,D): ";
+				std::cin >> a >> b >> c >> d >> A >> B >> C >> D;
+				Quadrilateral* figure = new Quadrilateral(a, b, c, d, A, B, C, D);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Quadrilateral* figure = new Quadrilateral;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 6:
+		{
+			if (choice2 == 1)
+			{
+				int a, b;
+				std::cout << "Input parameters of the rectangular(a,b): ";
+				std::cin >> a >> b;
+				Rectangular* figure = new Rectangular(a, b);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Rectangular* figure = new Rectangular;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 7:
+		{
+			if (choice2 == 1)
+			{
+				int a;
+				std::cout << "Input parameters of the square(a): ";
+				std::cin >> a;
+				Square* figure = new Square(a);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Square* figure = new Square;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 8:
+		{
+			if (choice2 == 1)
+			{
+				int a, b, A, B;
+				std::cout << "Input parameters of the parallelogram(a,b,A,B): ";
+				std::cin >> a >> b >> A >> B;
+				Parallelogram* figure = new Parallelogram(a, b, A, B);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Parallelogram* figure = new Parallelogram;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		case 9:
+		{
+			if (choice2 == 1)
+			{
+				int a, A, B;
+				std::cout << "Input parameters of the rhombus(a,A,B): ";
+				std::cin >> a >> A >> B;
+				Rhombus* figure = new Rhombus(a, A, B);
+				Figure* pfigure = &(*figure);
+				figure->get_info();
+				delete figure;
+			}
+			else
+			{
+				Rhombus* figure = new Rhombus;
+				Figure* pfigure = &(*figure);
+				pfigure->get_info();
+				delete figure;
+			}
+		}
+		break;
+		default:
+		{
+			Figure* figure = new Figure;
 			figure->get_info();
 			delete figure;
 		}
-		else
-		{
-			Triangle* figure = new Triangle;
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
+		break;
 		}
 
-	}
-	break;
-	case 2:
-	{
-		if (choice2 == 1)
-		{
-			int a, b, c, A, B;
-			std::cout << "Input parameters of the right triangle(a,b,c,A,B): ";
-			std::cin >> a >> b >> c >> A >> B;
-			RightTriangle* figure = new RightTriangle(a, b, c, A, B);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			RightTriangle* figure = new RightTriangle;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 3:
-	{
-		if (choice2 == 1)
-		{
-			int a, b, A, B;
-			std::cout << "Input parameters of the isosceles triangle(a,b,A,B): ";
-			std::cin >> a >> b >> A >> B;
-			IsoscelesTriangle* figure = new IsoscelesTriangle(a, b, A, B);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			IsoscelesTriangle* figure = new IsoscelesTriangle;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 4:
-	{
-		if (choice2 == 1)
-		{
-			int a;
-			std::cout << "Input parameters of the equilateral triangle(a): ";
-			std::cin >> a;
-			EquilateralTriangle* figure = new EquilateralTriangle(a);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			EquilateralTriangle* figure = new EquilateralTriangle;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 5:
-	{
-		if (choice2 == 1)
-		{
-			int a, b, c, d, A, B, C, D;
-			std::cout << "Input parameters of the quadrilateral(a,b,c,d,A,B,C,D): ";
-			std::cin >> a >> b >> c >> d >> A >> B >> C >> D;
-			Quadrilateral* figure = new Quadrilateral(a, b, c, d, A, B, C, D);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			Quadrilateral* figure = new Quadrilateral;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 6:
-	{
-		if (choice2 == 1)
-		{
-			int a, b;
-			std::cout << "Input parameters of the rectangular(a,b): ";
-			std::cin >> a >> b;
-			Rectangular* figure = new Rectangular(a, b);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			Rectangular* figure = new Rectangular;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 7:
-	{
-		if (choice2 == 1)
-		{
-			int a;
-			std::cout << "Input parameters of the square(a): ";
-			std::cin >> a;
-			Square* figure = new Square(a);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			Square* figure = new Square;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 8:
-	{
-		if (choice2 == 1)
-		{
-			int a, b, A, B;
-			std::cout << "Input parameters of the parallelogram(a,b,A,B): ";
-			std::cin >> a >> b >> A >> B;
-			Parallelogram* figure = new Parallelogram(a, b, A, B);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			Parallelogram* figure = new Parallelogram;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	case 9:
-	{
-		if (choice2 == 1)
-		{
-			int a, A, B;
-			std::cout << "Input parameters of the rhombus(a,A,B): ";
-			std::cin >> a >> A >> B;
-			Rhombus* figure = new Rhombus(a, A, B);
-			Figure* pfigure = &(*figure);
-			figure->get_info();
-			delete figure;
-		}
-		else
-		{
-			Rhombus* figure = new Rhombus;
-			Figure* pfigure = &(*figure);
-			pfigure->get_info();
-			delete figure;
-		}
-	}
-	break;
-	default:
-	{
-		Figure* figure = new Figure;
-		figure->get_info();
-		delete figure;
-	}
-	break;
+		std::cout << "If you want to continue enter 1, else enter any number(except 1): ";
+		std::cin >> numb;
+		(numb == 1 ? exit = true : exit = false);
 	}
 	return 0;
 }
