@@ -1,0 +1,3 @@
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.9/Homework 2.9.2/out/build/x64-Debug/CMakeFiles/Figures.dir
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.9/Homework 2.9.2/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.9/Homework 2.9.2/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
