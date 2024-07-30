@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20.0)
+project(Figures)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(Geometry SHARED EquilateralTriangle.h EquilateralTriangle.cpp Figure.h Figure.cpp IsoscelesTriangle.h IsoscelesTriangle.cpp Parallelogram.h Parallelogram.cpp Quadrilateral.h Quadrilateral.cpp Rectangular.h Rectangular.cpp Rhombus.h Rhombus.cpp RightTriangle.h RightTriangle.cpp Square.h Square.cpp Triangle.h Triangle.cpp Functions.h Functions.cpp)
+add_executable(FiguresExe main.cpp)
+target_link_libraries(FiguresExe Geometry)

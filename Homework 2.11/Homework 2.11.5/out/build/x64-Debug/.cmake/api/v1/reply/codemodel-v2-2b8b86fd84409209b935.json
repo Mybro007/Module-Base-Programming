@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Figures",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FiguresExe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FiguresExe-Debug-0a7b0e7d4685ad192f5b.json",
+					"name" : "FiguresExe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Geometry::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Geometry-Debug-d1eff9965fc14b3ccfd2.json",
+					"name" : "Geometry",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5/out/build/x64-Debug",
+		"source" : "C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

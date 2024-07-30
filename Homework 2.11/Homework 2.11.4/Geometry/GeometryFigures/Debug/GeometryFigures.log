@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\пк\Desktop\Базовое программирование\Homework 2.11\Homework 2.11.4\Geometry\GeometryFigures\main.cpp(7,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl print_info(class Triangle &)" (?print_info@@YAXAAVTriangle@@@Z) в функции _main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl print_info(class Quadrilateral &)" (?print_info@@YAXAAVQuadrilateral@@@Z) в функции _main.
+C:\Users\пк\Desktop\Базовое программирование\Homework 2.11\Homework 2.11.4\Geometry\Debug\GeometryFigures.exe : fatal error LNK1120: неразрешенных внешних элементов: 2

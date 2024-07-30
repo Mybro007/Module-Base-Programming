@@ -1,0 +1,4 @@
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5/out/build/x64-Debug/CMakeFiles/Geometry.dir
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5/out/build/x64-Debug/CMakeFiles/FiguresExe.dir
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/пк/Desktop/Базовое программирование/Homework 2.11/Homework 2.11.5/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
