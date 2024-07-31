@@ -1,6 +1,7 @@
 #pragma once
-#include"Triangle.h"
-#include"Quadrilateral.h"
+
+#include"Classes/Triangle.h"
+#include"Classes/Quadrilateral.h"
 
 void print_info(Triangle& fig);
 
