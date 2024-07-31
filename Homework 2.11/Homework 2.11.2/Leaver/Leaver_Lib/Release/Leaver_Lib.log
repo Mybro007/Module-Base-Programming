@@ -1,7 +1,0 @@
-﻿  Leaver.cpp
-C:\Users\пк\source\repos\Leaver\Leaver_Lib\Leaver.h(22,3): warning C4091: __declspec(dllexport): пропускается слева от "LeaveLib::Leaver", когда ни одна переменная не объявлена
-  Создание кода
-  Previous IPDB not found, fall back to full compilation.
-  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Создание кода завершено
-  Leaver_Lib.vcxproj -> C:\Users\пк\source\repos\Leaver\Release\Leaver_Lib.dll

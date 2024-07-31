@@ -1,3 +1,0 @@
-﻿  Leave.cpp
-C:\Users\пк\source\repos\Leaver\Leaver_Lib\Leaver.h(22,3): warning C4091: __declspec(dllimport): пропускается слева от "LeaveLib::Leaver", когда ни одна переменная не объявлена
-LINK : fatal error LNK1181: не удается открыть входной файл "C:\Users\пк\source\repos\Leaver\Release\Leaver_Lib.lib"
