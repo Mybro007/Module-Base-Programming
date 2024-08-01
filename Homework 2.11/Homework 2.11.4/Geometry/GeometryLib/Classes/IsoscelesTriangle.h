@@ -1,8 +1,8 @@
 #pragma once
 #include "Triangle.h"
 
-class IsoscelesTriangle : public Triangle
+class GEOMETRYLIB_API IsoscelesTriangle : public Triangle
 {
 public:
-	GEOMETRYLIB_API IsoscelesTriangle();
+	IsoscelesTriangle();
 };

@@ -1,7 +1,7 @@
 #pragma once
 #include "Triangle.h"
 
-GEOMETRYLIB_API class EquilateralTriangle : public Triangle
+class GEOMETRYLIB_API EquilateralTriangle : public Triangle
 {
 public:
 	EquilateralTriangle();

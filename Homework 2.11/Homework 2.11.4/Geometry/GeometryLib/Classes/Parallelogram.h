@@ -1,7 +1,7 @@
 #pragma once
 #include "Quadrilateral.h"
 
-class Parallelogram : public Quadrilateral
+class GEOMETRYLIB_API Parallelogram : public Quadrilateral
 {
 public:
 	Parallelogram();

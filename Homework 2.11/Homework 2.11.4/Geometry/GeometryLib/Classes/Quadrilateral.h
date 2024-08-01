@@ -1,7 +1,7 @@
 #pragma once
 #include "Figure.h"
 
-GEOMETRYLIB_API class Quadrilateral : public Figure
+class GEOMETRYLIB_API Quadrilateral : public Figure
 {
 protected:
 	int a;

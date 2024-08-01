@@ -1,7 +1,7 @@
 #pragma once
 #include "Quadrilateral.h"
 
-GEOMETRYLIB_API class Rhombus : public Quadrilateral
+class GEOMETRYLIB_API Rhombus : public Quadrilateral
 {
 public:
 	Rhombus();
