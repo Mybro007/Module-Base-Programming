@@ -7,7 +7,7 @@
 #include<iostream>
 #include<string>
 
-GEOMETRYLIB_API class Figure
+class GEOMETRYLIB_API Figure
 {
 protected:
 	std::string name;

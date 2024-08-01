@@ -4,5 +4,5 @@
 class IsoscelesTriangle : public Triangle
 {
 public:
-	GEOMETRYLIB_API IsoscelesTriangle();
+	IsoscelesTriangle();
 };

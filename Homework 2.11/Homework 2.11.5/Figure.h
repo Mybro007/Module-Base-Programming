@@ -1,13 +1,8 @@
 #pragma once
-#ifdef GEOMETRYLIB_EXPORTS
-#define GEOMETRYLIB_API __declspec(dllexport)
-#else 
-#define GEOMETRYLIB_API __declspec(dllimport)
-#endif
 #include<iostream>
 #include<string>
 
-GEOMETRYLIB_API class Figure
+class Figure
 {
 protected:
 	std::string name;

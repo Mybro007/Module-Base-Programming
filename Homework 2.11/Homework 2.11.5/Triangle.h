@@ -1,7 +1,7 @@
 #pragma once
 #include "Figure.h"
 
-GEOMETRYLIB_API class Triangle : public Figure
+class Triangle : public Figure
 {
 protected:
 	int a;
