@@ -398,6 +398,7 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Cmake
+<<<<<<< HEAD
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -415,3 +416,17 @@ bld/
 [Ll]ogs/
 # Add this line
 out/
+=======
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+>>>>>>> c544b6e5c967455b0304e6aa6c69f5ad0d4b2848
