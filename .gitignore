@@ -330,6 +330,7 @@ __pycache__/
 # Cake - Uncomment if you are using it
 tools/**
 !tools/packages.config
+out/build/x64-Debug
 
 # Tabs Studio
 *.tss
